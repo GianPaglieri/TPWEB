@@ -12,7 +12,7 @@ $categorias = businessObtenerCategorias();
 
 if(isset($_GET['del'] )){
     businessborrarProducto($_GET["del"]);
-    redirect('charts-copy.php');
+    redirect('ListadoProductos.php');
 }
 ?> 
 
@@ -77,7 +77,7 @@ include ("includes/sidebar.php")
                                       <td> <?php echo $prod ["activa"]? 'TRUE' :'FALSE' ?></td>
                                       <td> 
                                       <a href="ABM/formularioProducto.php?edit=<?php echo $prod['id']?>" class="btn btn-warning">Editar</a>
-                                      <a href= "charts-copy.php?del=<?php echo $prod ['id']?>" class="btn btn-danger">Borrar</a>
+                                      <a href= "ListadoProductos.php?del=<?php echo $prod ['id']?>" class="btn btn-danger">Borrar</a>
                                       </td>
 									</tr>
                                 <?php } ?>

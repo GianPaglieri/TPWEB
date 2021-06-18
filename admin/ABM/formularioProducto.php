@@ -17,7 +17,7 @@ if(isset($_POST['submit'])){
       businessGuardarProductos($_POST);
   }
 
-  redirect('../charts-copy.php');
+  redirect('../ListadoProductos.php');
 }
 
 $producto = array( 'nombre' => '','precio' => '','categoria' => '','marca' => '','activa' => '','descripcion'=>'', 'imagen' => '');
