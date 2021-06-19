@@ -17,8 +17,8 @@ function daoGuardarComentario($datos = array()){
 }
 
 function daoObtenerComentarios(){
-    if(file_exists(DIR_BASE.'datos/comentarios.json')){ 
-        $comentarios = json_decode(file_get_contents(DIR_BASE.'datos/comentarios.json'),TRUE);	
+    if(file_exists(DIR_BASE.'/admin/datos/comentarios.json')){ 
+        $comentarios = json_decode(file_get_contents(DIR_BASE.'/admin/datos/comentarios.json'),TRUE);	
     }else{
         $comentarios = array();
     }

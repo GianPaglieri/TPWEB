@@ -1,17 +1,17 @@
 <?php
-include_once(DIR_BASE."/admin/DAO/comentarios.php");
+include_once(DIR_BASE."/admin/DAO/comentariosDao.php");
 
 function businessGuardarComentario($datos = array()){
    daoGuardarcomentario($datos);
 
 }
 
-function obtenerComentarios(){
+function businessobtenerComentarios(){
    return daoObtenerComentarios();
 
 }
 
-function obtenerComentario($id){
+function businessobtenerComentario($id){
     return daoObtenerComentario();
 
 }
