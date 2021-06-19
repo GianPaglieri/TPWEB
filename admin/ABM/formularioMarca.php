@@ -12,17 +12,17 @@ include_once(DIR_BASE.'/admin/Business/marcasBusiness.php');
 
 if(isset($_POST['submit'])){
   if(!empty($_GET['edit'])){
-      businessModificarProducto($_POST,$_GET['edit']);
+      businessModificarMarca($_POST,$_GET['edit']);
   }else{
-      businessGuardarProductos($_POST);
+      businessGuardarMarcas($_POST);
   }
 
-  redirect('../ListadoProductos.php');
+  redirect('../Listadomarcas.php');
 }
 
-$producto = array( 'nombre' => '','precio' => '','categoria' => '','marca' => '','activa' => '','descripcion'=>'', 'imagen' => '');
+$marca = array( 'nombre' => '','fabricante' => '','contacto' => '','descripcion'=>'', 'imagen' => '');
 if(!empty($_GET['edit'])){
-  $producto = businessObtenerProducto($_GET['edit']);
+  $marca = businessObtenerProducto($_GET['edit']);
 }
 ?>
 
@@ -61,7 +61,7 @@ require(DIR_BASE."/admin/includes/navbar.php");
 
 						<div class="module">
 							<div class="module-head">
-								<h3>Agregar/Editar Productos</h3>
+								<h3>Agregar/Editar Marcas</h3>
 							</div>
 							<div class="module-body">
 
@@ -72,52 +72,32 @@ require(DIR_BASE."/admin/includes/navbar.php");
 										<div class="control-group">
 											<label class="control-label" for="basicinput">Nombre</label>
 											<div class="controls">
-												<input type="text" id="basicinput" name="nombre" value="<?php echo $producto['nombre']?>"  class="span8">
+												<input type="text" id="basicinput" name="nombre" value="<?php echo $marca['nombre']?>"  class="span8">
+												
+											</div>
+										</div>
+                                       
+
+                                       
+										<div class="control-group">
+											<label class="control-label" for="basicinput">Fabricante</label>
+											<div class="controls">
+												<input type="text" id="basicinput" name="fabricante" value="<?php echo $marca['fabricante']?>" class="span8">
 												
 											</div>
 										</div>
                                         <div class="control-group">
-											<label class="control-label" for="basicinput">Categoria</label>
-											<select name="categoria">
-                                             <?php foreach(businessObtenerCategorias() as $cat){?>
-                                             <option value="<?php echo $cat['nombre']?>" <?php echo ($cat['nombre'] == $producto['categoria'])?'selected':'' ?>> <?php echo $cat['nombre']?></option>
-                                             <?php } ?>
-                                            </select>
-											
-										</div>
-
-										<div class="control-group">
-											<label class="control-label" for="basicinput">Marca</label>
-											<select name="marca">
-                                             <?php foreach(businessObtenerMarcas() as $mar){?>
-                                             <option value="<?php echo $mar['nombre']?>" <?php echo ($mar['nombre'] == $producto['marca'])?'selected':'' ?>> <?php echo $mar['nombre']?></option>
-                                             <?php } ?>
-                                            </select>
-											
-										 </div>
-
-                                       
-										<div class="control-group">
-											<label class="control-label" for="basicinput">Precio</label>
+											<label class="control-label" for="basicinput">Contacto</label>
 											<div class="controls">
-												<input type="text" id="basicinput" name="precio" value="<?php echo $producto['precio']?>" class="span8">
+												<input type="text" id="basicinput" name="contacto" value="<?php echo $marca['contacto']?>" class="span8">
 												
 											</div>
 										</div>
-										<div class="control-group">
-											<label class="control-label">Activo</label>
-											<div class="controls">
-												<label class="checkbox inline">
-													<input type="checkbox" value="true" name="activa" <?php echo ($producto["activa"]==TRUE)?'checked':'' ?>>
-													
-												</label>
-												
-											</div>
-										</div>
+										
 										<div class="control-group">
 											<label class="control-label" for="basicinput">Descripcion</label>
 											<div class="controls">
-												<textarea class="span8" name="descripcion" rows="5"> <?php echo $producto['descripcion']?> </textarea>
+												<textarea class="span8" name="descripcion" rows="5"> <?php echo $marca['descripcion']?> </textarea>
 											</div>
 										</div>
 
