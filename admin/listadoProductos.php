@@ -77,7 +77,7 @@ include ("includes/sidebar.php")
 									  <td><?php echo $prod ["categoria"] ?></td>
 									  <td><?php echo $prod ["marca"] ?></td>
                                       <td><?php echo $prod ["precio"] ?></td>
-                                      <td> <?php echo $prod ["activa"]? 'SI' :'NO' ?></td>
+                                      <td> <?php echo $prod ["activa"] ?></td>
                                       <td> 
                                       <a href="ABM/formularioProducto.php?edit=<?php echo $prod['id']?>" class="btn btn-warning">Editar</a>
                                       <a href= "ListadoProductos.php?del=<?php echo $prod ['id']?>" class="btn btn-danger">Borrar</a>
