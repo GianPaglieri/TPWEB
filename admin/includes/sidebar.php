@@ -25,7 +25,21 @@
 								<a href="listadoProductos.php">
 									<i class="menu-icon icon-tasks"></i>
 									ABM Productos
-									<b class="label orange pull-right">19</b>
+									
+								</a>
+							</li>
+							<li>
+								<a href="listadoMarcas.php">
+									<i class="menu-icon icon-tasks"></i>
+									ABM Marcas
+									
+								</a>
+							</li>
+							<li>
+								<a href="listadoCategorias.php">
+									<i class="menu-icon icon-tasks"></i>
+									ABM Categorias
+									
 								</a>
 							</li>
 						
