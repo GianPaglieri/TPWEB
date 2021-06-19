@@ -4,6 +4,19 @@ require_once("config/config.php");
 include_once("includes/header.php");
 include_once("helpers/string.php");
 include_once("Business/marcasBusiness.php");
+require_once("helpers/urls.php");
+require_once("config/config.php");
+include_once("includes/header.php");
+include_once("helpers/string.php");
+include_once("Business/productosBusiness.php");
+
+include_once("Business/categoriasBusiness.php");
+include_once("Business/marcasBusiness.php");
+
+
+$categorias = businessObtenerCategorias();
+$marcas = businessObtenerMarcas();
+
 
 
 
