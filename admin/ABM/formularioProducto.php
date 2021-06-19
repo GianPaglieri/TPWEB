@@ -86,15 +86,17 @@ require(DIR_BASE."/admin/includes/navbar.php");
 											
 										</div>
 
-                                        <div class="control-group">
+										<div class="control-group">
 											<label class="control-label" for="basicinput">Marca</label>
-											<select>
-											<?php foreach(businessObtenerMarcas() as $marca){?>
-                                             <option value="<?php echo $marca['id']?>" <?php echo ($marca['id'] == $producto['marca'])?'selected':'' ?> > <?php echo $marca['nombre']?></option>
-                                               <?php } ?>
-                                               </select>
+											<select name="marca">
+                                             <?php foreach(businessObtenerMarcas() as $mar){?>
+                                             <option value="<?php echo $mar['id']?>" <?php echo ($mar['id'] == $producto['marca'])?'selected':'' ?>> <?php echo $mar['nombre']?></option>
+                                             <?php } ?>
+                                            </select>
 											
-										</div>
+										 </div>
+
+                                       
 										<div class="control-group">
 											<label class="control-label" for="basicinput">Precio</label>
 											<div class="controls">

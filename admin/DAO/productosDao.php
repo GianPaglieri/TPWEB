@@ -10,6 +10,7 @@ function daoguardarProducto($datos = array()){
        'precio' => $datos['precio'],
        'categoria' => $datos['categoria'],
        'marca' => $datos['marca'],
+      
        'activa' => isset($datos['activa'])?'TRUE':'FALSE',
        'descripcion' => $datos['descripcion'],
        'imagen' => $datos['imagen']
