@@ -14,7 +14,7 @@ $marcas = businessObtenerMarcas();
 
 if(isset($_GET['del'] )){
     businessborrarProducto($_GET["del"]);
-    redirect('ListadoProductos.php');
+    redirect('ListadoCategorias.php');
 }
 ?> 
 
@@ -44,15 +44,15 @@ include ("includes/sidebar.php")
                         <div class="module">
                             <div class="module-head">
                                 <h3>
-                                    Listado de productos</h3>
-                                    <a href="ABM/formularioProducto.php"  class="btn btn-primary">Agregar Producto</a>  
+                                    Listado de Categorias</h3>
+                                    <a href="ABM/formularioCategoria.php"  class="btn btn-primary">Agregar Categoria</a>  
                             </div>
                             <div class="module-body">
                                 <div class="grid">
                                     <div id="placeholder2" class="graph">
 
                                     <p>
-									<strong>Productos</strong>
+									<strong>Categorias</strong>
 									-
 									
 								</p>
@@ -61,26 +61,22 @@ include ("includes/sidebar.php")
 									<tr>
 									  <th>ID</th>
 									  <th>Nombre</th>
-									  <th>Categoria</th>
-                                      <th>Marca</th>
-									  <th>Precio</th>
-                                      <th>Activo</th>
+									  <th>Subcategoria</th>
                                       <th>Acciones</th>
 									</tr>
 								  </thead>
 								  <tbody>
-                                  <?php foreach(businessObtenerProductos() as $prod){?>
+                                  <?php foreach(businessObtenerCategorias() as $cats){?>
 
 									<tr>
-									  <td><?php echo cortar_palabras($prod['id'],555)?></td>
-									  <td><?php echo $prod ["nombre"] ?></td>
-									  <td><?php echo $prod ["categoria"] ?></td>
-									  <td><?php echo $prod ["marca"] ?></td>
-                                      <td><?php echo $prod ["precio"] ?></td>
-                                      <td> <?php echo $prod ["activa"]? 'SI' :'NO' ?></td>
+									  <td><?php echo cortar_palabras($cats['id'],555)?></td>
+									  <td><?php echo $cats ["nombre"] ?></td>
+									  <td><?php echo $cats ["subcategoria"] ?></td>
+									  <td><?php echo $cats ["marca"] ?></td>
+                                      
                                       <td> 
-                                      <a href="ABM/formularioProducto.php?edit=<?php echo $prod['id']?>" class="btn btn-warning">Editar</a>
-                                      <a href= "ListadoProductos.php?del=<?php echo $prod ['id']?>" class="btn btn-danger">Borrar</a>
+                                      <a href="ABM/formularioCategoria.php?edit=<?php echo $cats['id']?>" class="btn btn-warning">Editar</a>
+                                      <a href= "ListadoCategorias.php?del=<?php echo $cats ['id']?>" class="btn btn-danger">Borrar</a>
                                       </td>
 									</tr>
                                 <?php } ?>
