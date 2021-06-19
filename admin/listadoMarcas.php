@@ -15,7 +15,7 @@ include_once("helpers/string.php");
 
 if(isset($_GET['del'] )){
     businessborrarMarca($_GET["del"]);
-    redirect('/ListadoMarcas.php');
+    redirect('ListadoMarcas.php');
 }
 ?> 
 
@@ -70,7 +70,7 @@ include ("includes/sidebar.php")
 								  </thead>
 								  <tbody>
 
-                                  <?php foreach(businessObtenerMarCas() as $mAr){?>
+                                  <?php foreach(businessObtenerMarcas() as $mar){?>
                                 
 
 									<tr>

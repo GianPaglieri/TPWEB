@@ -22,7 +22,7 @@ if(isset($_POST['submit'])){
 
 $marca = array( 'nombre' => '','fabricante' => '','contacto' => '','descripcion'=>'', 'imagen' => '');
 if(!empty($_GET['edit'])){
-  $marca = businessObtenerProducto($_GET['edit']);
+  $marca = businessObtenerMarca($_GET['edit']);
 }
 ?>
 

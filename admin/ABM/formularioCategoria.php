@@ -20,7 +20,7 @@ if(isset($_POST['submit'])){
   redirect('../ListadoCategorias.php');
 }
 
-$categoria = array( 'nombre' => '','descripcion' => '','subcategoria' => '');
+$categoria = array( 'nombre' => '','subcategoria' => '','descripcion' => '');
 if(!empty($_GET['edit'])){
   $categoria = businessObtenerCategoria($_GET['edit']);
 }

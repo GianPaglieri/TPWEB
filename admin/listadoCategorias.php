@@ -3,17 +3,14 @@ require_once("helpers/urls.php");
 require_once("config/config.php");
 include_once("includes/header.php");
 include_once("helpers/string.php");
-include_once("Business/productosBusiness.php");
+
 
 include_once("Business/categoriasBusiness.php");
-include_once("Business/marcasBusiness.php");
 
 
-$categorias = businessObtenerCategorias();
-$marcas = businessObtenerMarcas();
 
 if(isset($_GET['del'] )){
-    businessborrarProducto($_GET["del"]);
+    businessborrarCategoria($_GET["del"]);
     redirect('ListadoCategorias.php');
 }
 ?> 
@@ -72,8 +69,6 @@ include ("includes/sidebar.php")
 									  <td><?php echo cortar_palabras($cats['id'],555)?></td>
 									  <td><?php echo $cats ["nombre"] ?></td>
 									  <td><?php echo $cats ["subcategoria"] ?></td>
-									  <td><?php echo $cats ["marca"] ?></td>
-                                      
                                       <td> 
                                       <a href="ABM/formularioCategoria.php?edit=<?php echo $cats['id']?>" class="btn btn-warning">Editar</a>
                                       <a href= "ListadoCategorias.php?del=<?php echo $cats ['id']?>" class="btn btn-danger">Borrar</a>

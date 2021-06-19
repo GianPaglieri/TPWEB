@@ -21,8 +21,8 @@ function daoguardarMarca($datos = array()){
 
 
 function daoObtenerMarcas(){
-    if(file_exists('../datos/marca.json')){ 
-        $marcas = json_decode(file_get_contents('../datos/marca.json'),TRUE);	
+    if(file_exists(DIR_BASE.'/admin/datos/marca.json')){ 
+        $marcas = json_decode(file_get_contents(DIR_BASE.'/admin/datos/marca.json'),TRUE);	
     }else{
         $marcas = array();
     }
@@ -47,14 +47,14 @@ function daomodificarMarca($id ,$datos = array() ){
        'contacto' => $datos['contacto'],
        'marca' => $datos['marca'],
        'descripcion' => $datos['descripcion'],
-       'imagen' => $datos['imagen']
+     
    ); 
    file_put_contents('../datos/marca.json',json_encode($marcas));
     
 }
 
 function daoborrarMarca($id){
-     $marcas=daoObtenerMarca();
+     $marcas=daoObtenerMarcas();
      unset($marcas[$id]);
      file_put_contents(DIR_BASE.'/admin/datos/marca.json', json_encode($marcas));
 }

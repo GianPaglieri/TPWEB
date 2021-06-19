@@ -21,18 +21,18 @@
 
 
 function daoObtenerCategorias(){
-    if(file_exists('../datos/categoria.json')){ 
-        $cats = json_decode(file_get_contents('../datos/categoria.json'),TRUE);	
+    if(file_exists(DIR_BASE.'/admin/datos/categoria.json')){ 
+        $categorias = json_decode(file_get_contents(DIR_BASE.'/admin/datos/categoria.json'),TRUE);	
     }else{
-        $cats = array();
+        $categorias = array();
     }
 
-    return $cats;
+    return $categorias;
 
 }
 
 function daoobtenerCategoria($id){
-    $productos = daoobtenerCategorias();  
+    $categorias = daoobtenerCategorias();  
     return $categorias[$id];
 
 }
@@ -44,7 +44,7 @@ function daomodificarCategoria($id ,$datos = array() ){
        'id' => $id,
        'nombre' => $datos['nombre'],
        'subcategoria' => $datos['subcategoria'],
-       'categoria' => $datos['categoria'],
+       
       
        'descripcion' => $datos['descripcion'],
       
