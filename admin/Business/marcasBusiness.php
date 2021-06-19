@@ -26,6 +26,7 @@ function businessObtenerMarcas(){
     return daoObtenerMarcas();
 
 }
+
 function businessobtenerMarca($id){
     return daoObtenerMarca($id);
 

@@ -8,16 +8,6 @@ require_once("helpers/urls.php");
 require_once("config/config.php");
 include_once("includes/header.php");
 include_once("helpers/string.php");
-include_once("Business/productosBusiness.php");
-
-include_once("Business/categoriasBusiness.php");
-include_once("Business/marcasBusiness.php");
-
-
-$categorias = businessObtenerCategorias();
-$marcas = businessObtenerMarcas();
-
-
 
 
 
@@ -56,6 +46,7 @@ include ("includes/sidebar.php")
                             <div class="module-head">
                                 <h3>
                                     Listado de marcas</h3>
+                                    <a href="ABM/formularioMarca.php"  class="btn btn-primary">Agregar Marca</a> 
                             </div>
                             <div class="module-body">
                                 <div class="grid">
@@ -78,9 +69,8 @@ include ("includes/sidebar.php")
 									</tr>
 								  </thead>
 								  <tbody>
-                                  <?php foreach(businessObtenerMarcas() as $mar){
-                                        echo "aca";
-                                        ?>
+
+                                  <?php foreach(businessObtenerMarCas() as $mAr){?>
                                 
 
 									<tr>
