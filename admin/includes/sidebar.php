@@ -22,9 +22,9 @@
 							</li>
 							
 							<li>
-								<a href="task.php">
+								<a href="listadoProductos.php">
 									<i class="menu-icon icon-tasks"></i>
-									Tasks
+									ABM Productos
 									<b class="label orange pull-right">19</b>
 								</a>
 							</li>

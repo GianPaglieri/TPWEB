@@ -16,7 +16,7 @@ require_once(DIR_BASE."/admin/includes/navbar.php")
 	
 	
 <?php 
-require_once(DIR_BASE."/admin/includes/sidebar.php")
+require_once("includes/sidebar.php")
 ?>		
 
 
