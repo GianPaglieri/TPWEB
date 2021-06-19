@@ -107,7 +107,7 @@ function eliminar_archivos($dir)
 function obtener_imagenes($ruta){
 	$galeria = array();
 	if(is_dir($ruta)){
-		$directorio=opendir(DIR_BASE.$ruta); 
+		$directorio=opendir(DIR_BASE.admin/$ruta); 
 		while ($archivo = readdir($directorio) ){
 			if( $archivo != '.' and $archivo != '..' and stristr($archivo,'small') !== false){
 				//img_1_small.png

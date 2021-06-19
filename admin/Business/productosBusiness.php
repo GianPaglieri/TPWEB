@@ -61,7 +61,7 @@ function businessmodificarProducto($id, $datos = array(), ){
 
 
 function saveImage($datos,$id){ 
-    $ruta = DIR_BASE.'images/'.$id.'/';
+    $ruta = DIR_BASE.'/admin/images/'.$id.'/';
     if(!is_dir($ruta)){
         mkdir($ruta);
     }
