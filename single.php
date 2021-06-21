@@ -102,7 +102,26 @@ include_once('include/header.php');
         <div class="clearfix"></div>
             </div>
         </div>
-        
+         <!-- comentarios -->       
+         <div class="contact">
+            <div class="container">
+                <h3>commentary</h3>
+                <div class="contact-content">
+                    <form>
+                        <input type="text" class="textbox" value=" Your Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Name';}"><br>
+                        <input type="text" class="textbox" value="Your E-Mail" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your E-Mail';}"><br>
+                            <div class="clear"> </div>
+                        <div>
+                            <textarea value="Message:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Message ';}">Your Message</textarea><br>
+                        </div>	
+                       <div class="submit"> 
+                            <input class="btn btn-default cont-btn" type="submit" value="SEND COMMENT" />
+                      </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+ <!-- fin comentarios -->
         <div class="specifications">
             <div class="container">
               <h3>Item Details</h3> 
