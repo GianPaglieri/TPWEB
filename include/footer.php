@@ -21,7 +21,7 @@
                     <h3>Categories</h3>
                     <ul class="categories">
                         <?php
-                         $arraycat = json_decode(file_get_contents('datos/categorias.json'),TRUE);	
+                         $arraycat = json_decode(file_get_contents('admin/datos/categoria.json'),TRUE);	
                          foreach($arraycat as $categorias){        
                          ?>
                         <li><a href="#"><?php echo $categorias['nombre']?></a></li>
@@ -32,7 +32,7 @@
                     <h3>Marcas</h3>
                     <ul class="shot-links">
                         <?php
-                         $arraymarca = json_decode(file_get_contents('datos/marcas.json'),TRUE);	
+                         $arraymarca = json_decode(file_get_contents('admin/datos/marca.json'),TRUE);	
                          foreach($arraymarca as $marcas){        
                          ?>
                         <li><a href="#"><?php echo $marcas['nombre']?></a></li>
