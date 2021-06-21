@@ -199,5 +199,5 @@ include_once('include/header.php');
         </div>
         
         <?php
-        include_once(DIR_BASE.'include/footer.php');
+        include_once('include/footer.php');
         ?>

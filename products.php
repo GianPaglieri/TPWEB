@@ -15,7 +15,7 @@
            <div class="container">
                <div class="col-md-9 grid-gallery">
                      <?php
-                        $arrayProductos = json_decode(file_get_contents('datos/productos.json'),TRUE);	
+                        $arrayProductos = json_decode(file_get_contents('admin/datos/productos.json'),TRUE);	
 
                         foreach($arrayProductos as $producto){ 
                             $print = true;
@@ -69,7 +69,7 @@
 							  </ul>
 							 <div class="single-bottom">
                              <?php
-                         $arraycat = json_decode(file_get_contents('datos/categorias.json'),TRUE);	
+                         $arraycat = json_decode(file_get_contents('admin/datos/categoria.json'),TRUE);	
                          foreach($arraycat as $categorias){   
                              					
 					if(!empty($_GET['categoria']) AND $print){
@@ -95,7 +95,7 @@
 							 <div class="single-bottom">	
 
                              <?php
-                         $arraymarca = json_decode(file_get_contents('datos/marcas.json'),TRUE);	
+                         $arraymarca = json_decode(file_get_contents('admin/datos/marca.json'),TRUE);	
                          foreach($arraymarca as $marcas){        
                          ?>
                         <li><a href="#"><?php echo $marcas['nombre']?></a></li>
