@@ -1,5 +1,4 @@
 <?php
-  
   require_once('admin/config/config.php');
   require_once('include/header.php');
 ?>
@@ -68,7 +67,6 @@
 									<div class="clearfix"> </div>
 							  </ul>
 							 <div class="single-bottom">
-<<<<<<< HEAD
 <!-- filtro categorias -->
 							 <?php 
 				$arrCat = json_decode(file_get_contents(DIR_BASE.'admin/datos/categoria.json'),true);
@@ -80,24 +78,6 @@
 			<?php } ?>
 			<li><a href="products.php?categoria=&marca=<?php echo (isset($_GET['marca']))?$_GET['marca']:""; ?>"><span class="icon-chevron-right"></span>Todas</a></li>
 <!-- fin filtro categoria -->
-=======
-                             <?php
-                         $arraycat = json_decode(file_get_contents('admin/datos/categoria.json'),TRUE);	
-                         foreach($arraycat as $categorias){   
-                             					
-					if(!empty($_GET['categoria']) AND $print){
-						if($producto['categoria'] != $_GET['categoria']) $print = FALSE;
-					}
-
-					if(!empty($_GET['marca']) AND $print){
-						if($producto['marca'] != $_GET['marca']) $print = FALSE;
-					}
-
-				 	if($print){      
-                         ?>
-                              <li><a href="#"><?php echo $categorias['nombre']?></a></li>
-                               <?php } }?>
->>>>>>> 9a73ffef0c2f9bce58d99fc57ff5ebcdc7a51484
 						     </div>
 					      </div>						  
 						  <div class="tab2">
@@ -107,7 +87,6 @@
 									<div class="clearfix"> </div>
 							  </ul>
 							 <div class="single-bottom">	
-<<<<<<< HEAD
 <!-- filtro marca -->
 							 <?php 
 				$arrMarcas = json_decode(file_get_contents(DIR_BASE.'admin/datos/marca.json'),true);
@@ -119,16 +98,6 @@
 			<?php } ?>
 			<li><a href="products.php?marca=&categoria=<?php echo (isset($_GET['categoria']))?$_GET['categoria']:""; ?>"><span class="icon-chevron-right"></span>Todas</a></li>
 <!-- fin de filtro marca -->
-=======
-
-                             <?php
-                         $arraymarca = json_decode(file_get_contents('admin/datos/marca.json'),TRUE);	
-                         foreach($arraymarca as $marcas){        
-                         ?>
-                        <li><a href="#"><?php echo $marcas['nombre']?></a></li>
-                        <?php } ?>
-
->>>>>>> 9a73ffef0c2f9bce58d99fc57ff5ebcdc7a51484
 						     </div>
 					      </div>						  
 						  <!--script-->
