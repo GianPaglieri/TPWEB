@@ -1,5 +1,5 @@
 <?php
-include_once(DIR_BASE.'include/header.php');
+include_once('include/header.php');
 ?>
             </div>
         </div>

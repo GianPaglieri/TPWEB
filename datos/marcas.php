@@ -8,16 +8,14 @@ $marcas = array(
    ),
    '2' => array(
           'id' => 2,
-          'nombre' => 'adidas',
+          'nombre' => 'air',
           'activo' => false     
    ),
     3 => array(
          'id'  => 3,
-         'nombre' => 'puma',
+         'nombre' => 'jordan',
          'activo' =>  true   
    )
-
-
    );
 
 echo json_encode($marcas);

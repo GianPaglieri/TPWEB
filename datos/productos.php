@@ -19,7 +19,7 @@ $productos = array(
    ),
     3 => array(
          'id'  => 3,                /* producto: 3  */
-         'nombre' => 'nike t-shirt',/* nombre producto 3: nike t-shirt */ 
+         'nombre' => 'nike t-sht',/* nombre producto 3: nike t-shirt */ 
          'categoria' => 3,          /* categoria: remera */ 
           'marca' => 1,             /* marca: nike */
           'precio' => 50,           /* precio usd: 50 */ 
@@ -43,7 +43,7 @@ $productos = array(
  ),
   6 => array(
        'id'  => 6,                  /* producto: 6  */
-       'nombre' => 'adidas t-shirt',/* nombre producto 6: adidas t-shirt */ 
+       'nombre' => 'ad t-shrt',/* nombre producto 6: adidas t-shirt */ 
        'categoria' => 3,            /* categoria: remera */ 
         'marca' => 2,               /* marca: adidas */ 
         'precio' => 50,             /* precio usd: 50 */ 
@@ -60,15 +60,15 @@ $productos = array(
 '8' => array(
       'id' => 8,              /* producto: 8 */
       'nombre' => 'tfs track',/* nombre producto 8: tfs track */
-      'categoria' => 2,       /* categoria: pantalon  */ 
+      'categoria' => 4,       /* categoria: pantalon  */ 
       'marca' => 3,           /* marca: puma */
       'precio' => 80,         /* precio usd: 80 */  
       'activo' => true 
 ),
 9 => array(
      'id'  => 9,                /* producto: 9  */
-     'nombre' => 'puma t-shirt',/* nombre producto 9: puma t-shirt */ 
-     'categoria' => 3,          /* categoria: remera */ 
+     'nombre' => 'pum t-shir',/* nombre producto 9: puma t-shirt */ 
+     'categoria' => 4,          /* categoria: remera */ 
       'marca' => 3,             /* marca: puma */ 
       'precio' => 50,           /* precio usd: 50 */ 
       'activo' => true
