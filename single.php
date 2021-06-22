@@ -1,7 +1,10 @@
 <?php
 
 include_once('include/header.php');
+include_once('admin/Business/productosBusiness.php');
+$seccion = 'products';
 ?>
+<<<<<<< HEAD
        <body>
         <div class="header">
             <div class="container">
@@ -10,6 +13,15 @@ include_once('include/header.php');
                         <a href="index.php">AllShoes.com</a>
                     </div>
                        
+=======
+
+<?php
+		$producto = businessObtenerProducto($_GET['producto']);
+	?>
+
+            </div>
+        </div>
+>>>>>>> 7f245bf0c8b77941496549b072a696bfe366df29
         <div class="head-bread">
             <div class="container">
                 <ol class="breadcrumb">
@@ -43,9 +55,10 @@ include_once('include/header.php');
                 <div class="col-md-4 showcase">
                     <div class="showcase-rt-top">
                         <div class="pull-left shoe-name">
-                            <h3>Nike Air Max 2015</h3>
+                            <h3><?php echo $producto['nombre']?></h3>
+                            <h3><?php echo $producto['nombre']?> [$<?php echo $producto['precio']?>]</h3>
                             <p>Men's running shoes</p>
-                            <h4>&#36;190</h4>
+                            <h4>&#36;<?php echo $producto['precio']?></h4>
                         </div>
                         <div class="pull-left rating-stars">
                             <ul>
