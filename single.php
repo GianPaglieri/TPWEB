@@ -44,7 +44,6 @@ $seccion = 'products';
                     <div class="showcase-rt-top">
                         <div class="pull-left shoe-name">
                             <h3><?php echo $producto['nombre']?></h3>
-                            <h3><?php echo $producto['nombre']?> [$<?php echo $producto['precio']?>]</h3>
                             <p>Men's running shoes</p>
                             <h4>&#36;<?php echo $producto['precio']?></h4>
                         </div>
