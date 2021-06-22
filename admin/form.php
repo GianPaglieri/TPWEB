@@ -170,7 +170,7 @@ require_once(DIR_BASE."/admin/includes/sidebar.php");
 											<label class="control-label">Inline Checkboxes</label>
 											<div class="controls">
 												<label class="checkbox inline">
-													<input type="checkbox" value="">
+													<input type="checkbox" value=""
 													Option one
 												</label>
 												<label class="checkbox inline">
