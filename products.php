@@ -46,7 +46,8 @@
                                 </div></div>
                             </div>
                         <div class="quick-view">
-                            <a href="single.php">comprar</a>
+                           
+                            <a href="single.php?producto=<?php echo $producto['id']?>" class="shopBtn">VIEW</a>
                         </div>
                     </div>
 <!-- fin codigo a repetir -->
