@@ -22,27 +22,29 @@
 <!-- filtro categoria -->
                     <ul class="nav nav-list">
                     <?php 
-				$arrCat = json_decode(file_get_contents(DIR_BASE.'admin/datos/categoria.json'),true);
+				$arrCat = json_decode(file_get_contents('admin/datos/categoria.json'),true);
 				foreach($arrCat as $cat ){
 			?>
 					<li><a href="products.php?categoria=<?php echo $cat['nombre']?>&marca=<?php echo (isset($_GET['marca']))?$_GET['marca']:""; ?>">
 					        <span class="icon-chevron-right"></span><?php echo $cat['nombre']?>
 					    </a></li>
+                        <li class="divider"></li>
 			<?php } ?>
 			<li><a href="products.php?categoria=&marca=<?php echo (isset($_GET['marca']))?$_GET['marca']:""; ?>"><span class="icon-chevron-right"></span>Todas</a></li>
                 </div>
 <!-- fin filtro categorias   -->           
                 <div class="col-md-2 re-ft-grd">
                     <h3>Marcas</h3>
-                    <ul class="shot-links">
+                    <ul class="nav nav-list">
 <!-- filtro marcas -->
                     <?php 
-				$arrMarcas = json_decode(file_get_contents(DIR_BASE.'admin/datos/marca.json'),true);
+				$arrMarcas = json_decode(file_get_contents('admin/datos/marca.json'),true);
 				foreach($arrMarcas as $mar ){
 			?>
 					<li><a href="products.php?marca=<?php echo $mar['nombre']?>&categoria=<?php echo (isset($_GET['categoria']))?$_GET['categoria']:""; ?>">
 					     <span class="icon-chevron-right"></span><?php echo $mar['nombre']?>
 				    </a></li>
+                    <li class="divider"></li>
 			<?php } ?>
 			<li><a href="products.php?marca=&categoria=<?php echo (isset($_GET['categoria']))?$_GET['categoria']:""; ?>"><span class="icon-chevron-right"></span>Todas</a></li>
 <!-- fin filtro marcas -->

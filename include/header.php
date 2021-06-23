@@ -28,17 +28,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<!--bootstrap-js-->
 			<script src="js/bootstrap.min.js"></script>
 		<!--script-->
+        <script>
+            // Can also be used with $(document).ready()
+            $(window).load(function() {
+              $('.flexslider').flexslider({
+                animation: "slide",
+                controlNav: "thumbnails"
+              });
+            });
+            </script>
+        <!-- //FlexSlider-->
     </head>
-    <body>
-        <div class="header">
-            <div class="container">
-                <div class="header-top">
-                    <div class="logo">
-                        <a href="index.php">AllShoes.com</a>
-                    </div>
-                   
-               
-              
 <?php
 include_once('include/header-menu.php');
 ?>              
