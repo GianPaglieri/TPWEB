@@ -1,8 +1,6 @@
 <?php
-require_once('admin/config/config.php');
-include_once(DIR_BASE.'admin/DAO/productosDao.php');
-include_once(DIR_BASE.'admin/helpers/image.php');
-
+include_once(DIR_BASE.'/admin/DAO/productosDao.php');
+include_once(DIR_BASE.'/admin/helpers/image.php');
 
 
 
@@ -39,15 +37,16 @@ function businessobtenerProducto($id){
 
 }
 
-function businessmodificarProducto($id, $datos = array() ){
+function businessmodificarProducto($datos = array(), $id ){
 //    if(!empty($_FILES['imagen'])){
 //       $datos['imagen'] = $_FILES['imagen']['name'];
-
+      daoModificarProducto($datos,$id);
       if(!empty($_FILES['imagen'])){
         saveImage($_FILES['imagen'], $id);
-      daoModificarProducto($datos,$id);
 
   }
+
+
 
   if(!empty($_FILES['imagen'])){
       if(!is_dir(DIR_BASE.'/admin/images/'.$id)){
