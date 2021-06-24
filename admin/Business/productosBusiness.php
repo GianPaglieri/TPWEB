@@ -1,4 +1,5 @@
 <?php
+include_once('admin/config/config.php');
 include_once(DIR_BASE.'/admin/DAO/productosDao.php');
 include_once(DIR_BASE.'/admin/helpers/image.php');
 
