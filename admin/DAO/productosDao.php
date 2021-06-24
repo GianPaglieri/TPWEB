@@ -40,7 +40,7 @@ function daoobtenerProducto($id){
 
 }
 
-function daomodificarProducto($id ,$datos = array() ){
+function daomodificarProducto($datos = array(), $id  ){
 
     $productos = daoObtenerProductos();
     $productos[$id] = array(
