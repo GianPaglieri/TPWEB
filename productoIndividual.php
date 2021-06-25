@@ -1,143 +1,180 @@
 <?php
-include_once('include/header.php');
+include_once('admin/helpers/urls.php');
+include_once('admin/Business/comentariosBusiness.php');
+include_once('admin/Business/productosBusiness.php');
 
-	ini_set('display_errors', 1);
-	ini_set('display_startup_errors', 1);
-	error_reporting(E_ALL);
-	$seccion = 'list-view';
-	include_once('include/header.php');
-
-	
- 
-	if(isset($_POST['submitCom'])){ 
-		businessGuardarComentario($_POST);
-	}
-
-
-?>
+$seccion = 'products';
+include_once('admin/helpers/string.php');
+if(isset($_POST['submit'])){ 
+    businessGuardarComentario($_POST);     
+    }
+  
+  $comentarios = array( 'nombre' => '','email' => '','mensaje' => '','fecha' => '');
+  
+  ?>
 
 
+<?php
+		$producto = businessObtenerProducto($_GET['producto']);
+	?>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>N-Air a E-commerce category Flat Bootstrap Responsive Website Template | Single :: w3layouts</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="N-Air Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+		<script type="application/x-javascript"> addEventListener("load", function() {setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		<meta charset utf="8">
+		<!--fonts-->
+		<link href='//fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
+		
+		<!--fonts-->
+		<!--bootstrap-->
+			 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<!--coustom css-->
+			<link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <!--shop-kart-js-->
+        <script src="js/simpleCart.min.js"></script>
+		<!--default-js-->
+			<script src="js/jquery-2.1.4.min.js"></script>
+		<!--bootstrap-js-->
+			<script src="js/bootstrap.min.js"></script>
+		<!--script-->
+         <!-- FlexSlider -->
+            <script src="js/imagezoom.js"></script>
+              <script defer src="js/jquery.flexslider.js"></script>
+            <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+
+            <script>
+            // Can also be used with $(document).ready()
+            $(window).load(function() {
+              $('.flexslider').flexslider({
+                animation: "slide",
+                controlNav: "thumbnails"
+              });
+            });
+            </script>
+        <!-- //FlexSlider-->
+    </head>
     <body>
-        <div class="header">
-            <div class="container">
-                <div class="header-top">
-                    <div class="logo">
-                        <a href="index.html">N-AIR</a>
-                    </div>
-                    <div class="login-bars">
-                        <a class="btn btn-default log-bar" href="register.html" role="button">Sign up</a>
-                        <a class="btn btn-default log-bar" href="signup.html" role="button">Login</a>
-                        <div class="cart box_1">
-                            <a href="checkout.html">
-                            <h3>
-                                <div class="total">
-<span class="simpleCart_total"></span>(<span id="simpleCart_quantity" class="simpleCart_quantity"></span>)</div></h3>
-                            </a>
-                            <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
-                            <div class="clearfix"> </div>
-                        </div>	
-                    </div>
-        <div class="clearfix"></div>
+    <div class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <a href="index.php">AllShoes.com</a>
                 </div>
+                <div class="login-bars">
+                    <div class="total">
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
                 <!---menu-----bar--->
                 <div class="header-botom">
                     <div class="content white">
-                    <nav class="navbar navbar-default nav-menu" role="navigation">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                        </div>
-                        <!--/.navbar-header-->
-
-                        <div class="collapse navbar-collapse collapse-pdng" id="bs-example-navbar-collapse-1">
-                            <ul class="nav navbar-nav nav-font">
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Shop<b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="products.html">Shoes</a></li>
-                                        <li><a href="products.html">Tees</a></li>
-                                        <li><a href="products.html">Tops</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="products.html">Tracks</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="products.html">Gear</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Men<b class="caret"></b></a>
-                                    <ul class="dropdown-menu multi-column columns-3">
-                                        <div class="row">
-                                            <div class="col-sm-4 menu-img-pad">
-                                                <ul class="multi-column-dropdown">
-                                                    <li><a href="products.html">Joggers</a></li>
-                                                    <li><a href="products.html">Foot Ball</a></li>
-                                                    <li><a href="products.html">Cricket</a></li>
-                                                    <li class="divider"></li>
-                                                    <li><a href="products.html">Tennis</a></li>
-                                                    <li class="divider"></li>
-                                                    <li><a href="products.html">Casual</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-sm-4 menu-img-pad">
-                        <a href="#"><img src="images/menu1.jpg" alt="/" class="img-rsponsive men-img-wid" /></a>
-                                            </div>
-                                            <div class="col-sm-4 menu-img-pad">
-                        <a href="#"><img src="images/menu2.jpg" alt="/" class="img-rsponsive men-img-wid" /></a>
-                                            </div>
-                                        </div>
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Women<b class="caret"></b></a>
-                                    <ul class="dropdown-menu multi-column columns-2">
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <ul class="multi-column-dropdown">
-                                                    <li><a href="products.html">Tops</a></li>
-                                                    <li><a href="products.html">Bottoms</a></li>
-                                                    <li><a href="products.html">Yoga Pants</a></li>
-                                                    <li class="divider"></li>
-                                                    <li><a href="products.html">Sports</a></li>
-                                                    <li class="divider"></li>
-                                                    <li><a href="products.html">Gym</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-sm-6">
-                        <a href="#"><img src="images/menu3.jpg" alt="/" class="img-rsponsive men-img-wid" /></a>
-                                            </div>
-                                        </div>
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">kids<b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="products.html">Tees</a></li>
-                                        <li><a href="products.html">Shorts</a></li>
-                                        <li><a href="products.html">Gear</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="products.html">Watches</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="products.html">Shoes</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="contact.html">Catch</a></li>
-                                <div class="clearfix"></div>
-                            </ul>
+                        <nav class="navbar navbar-default nav-menu" role="navigation">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                    data-target="#bs-example-navbar-collapse-1">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
                             <div class="clearfix"></div>
-                        </div>
-                        <!--/.navbar-collapse-->
-                        <div class="clearfix"></div>
-                    </nav>
-                    <!--/.navbar-->   
+                            <!--/.navbar-header-->
+
+                            <div class="collapse navbar-collapse collapse-pdng" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav nav-font">
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Shop<b
+                                                class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="products.php">Shoes</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Marcas<b
+                                                class="caret"></b></a>
+                                        <ul class="dropdown-menu multi-column columns-3">
+                                            <div class="row">
+                                                <div class="col-sm-4 menu-img-pad">
+                                                    <ul class="multi-column-dropdown">
+                                                        <?php 
+			                                            	$arrMarcas = json_decode(file_get_contents('admin/datos/marca.json'),true);
+				                                            foreach($arrMarcas as $mar ){
+			                                        ?>
+                                                        <li><a
+                                                                href="products.php?marca=<?php echo $mar['nombre']?>&categoria=<?php echo (isset($_GET['categoria']))?$_GET['categoria']:""; ?>">
+                                                                <span
+                                                                    class="icon-chevron-right"></span><?php echo $mar['nombre']?>
+                                                            </a></li>
+                                                            <li class="divider"></li>
+                                                        <?php } ?>
+                                                        <li><a
+                                                                href="products.php?marca=&categoria=<?php echo (isset($_GET['categoria']))?$_GET['categoria']:""; ?>"><span
+                                                                    class="icon-chevron-right"></span>Todas</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-sm-4 menu-img-pad">
+                                                    <a href="#"><img src="images/menu1.jpg" alt="/"
+                                                            class="img-rsponsive men-img-wid" /></a>
+                                                </div>
+                                                <div class="col-sm-4 menu-img-pad">
+                                                    <a href="#"><img src="images/menu2.jpg" alt="/"
+                                                            class="img-rsponsive men-img-wid" /></a>
+                                                </div>
+                                            </div>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categoria<b
+                                                class="caret"></b></a>
+                                        <ul class="dropdown-menu multi-column columns-2">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <ul class="multi-column-dropdown">
+                                                        <?php 
+				                                            $arrCat = json_decode(file_get_contents('admin/datos/categoria.json'),true);
+			                                            	foreach($arrCat as $cat ){
+                                                        ?>
+                                                        <li><a
+                                                                href="products.php?categoria=<?php echo $cat['nombre']?>&marca=<?php echo (isset($_GET['marca']))?$_GET['marca']:""; ?>">
+                                                                <span
+                                                                    class="icon-chevron-right"></span><?php echo $cat['nombre']?>
+                                                            </a></li>
+                                                            <li class="divider"></li>
+                                                        <?php } ?>
+                                                        <li><a
+                                                                href="products.php?categoria=&marca=<?php echo (isset($_GET['marca']))?$_GET['marca']:""; ?>"><span
+                                                                    class="icon-chevron-right"></span>Todas</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <a href="#"><img src="images/menu3.jpg" alt="/"
+                                                            class="img-rsponsive men-img-wid" /></a>
+                                                </div>
+                                            </div>
+                                        </ul>
+                                    </li>
+                                    <li><a href="contact.php">Catch</a></li>
+                                    <div class="clearfix"></div>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <!--/.navbar-collapse-->
+                            <div class="clearfix"></div>
+                        </nav>
+                        <!--/.navbar-->
                         <div class="clearfix"></div>
                     </div>
                     <!--/.content--->
                 </div>
-                    <!--header-bottom-->
+                <!--header-bottom-->
             </div>
         </div>
         <div class="head-bread">
@@ -173,9 +210,9 @@ include_once('include/header.php');
                 <div class="col-md-4 showcase">
                     <div class="showcase-rt-top">
                         <div class="pull-left shoe-name">
-                            <h3>Nike Air Max 2015</h3>
-                            <p>Men's running shoes</p>
-                            <h4>&#36;190</h4>
+                            <h3><?php echo $producto['nombre']?></h3>
+                            
+                            <h4>&#36;<?php echo $producto['precio']?></h4>
                         </div>
                         <div class="pull-left rating-stars">
                             <ul>
@@ -227,37 +264,36 @@ include_once('include/header.php');
                     </div>
                     <div class="showcase-last">
                         <h3>product details</h3>
-                        <ul>
-                            <li>Internal bootie wraps your foot for a sock-like fit</li>
-        <li>Unique eyestays work with the Flywire cables to create an even better glove-like fit</li>
-                            <li>Waffle outsole for durability and multi-surface traction</li>
-        <li>Sculpted Cushlon midsole combines plush cushioning and springy resilience for impact protection</li>
-                            <li>Midsole flex grooves for greater forefoot flexibility</li>
-                        </ul>
+                        <p><?php echo cortar_palabras($producto['descripcion'],150)?> </p>
                     </div>
                 </div>
         <div class="clearfix"></div>
             </div>
         </div>
-        <!-- comentarios -->       
-        <div class="contact">
-            <div class="container">
-                <h3>commentary</h3>
-                <div class="contact-content">
-                    <form>
-                        <input type="text" class="textbox" value=" Your Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Name';}"><br>
-                        <input type="text" class="textbox" value="Your E-Mail" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your E-Mail';}"><br>
-                            <div class="clear"> </div>
-                        <div>
-                            <textarea value="Message:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Message ';}">Your Message</textarea><br>
-                        </div>	
-                       <div class="submit"> 
-                            <input class="btn btn-default cont-btn" type="submit" value="SEND COMMENT" />
-                      </div>
-                    </form>
+        <!-- comentarios -->
+<div class="contact">
+    <div class="container">
+        <h3>Comentarios</h3>
+        <div class="contact-content">
+            <form class="form-horizontal row-fluid" action="" method="POST" >
+                <input type="text" class="textbox" name= "nombre" value="<?php echo $comentarios['nombre'] ?>" onfocus="this.value = '';"
+                    onblur="if (this.value == '') {this.value = 'Your Name';}"><br>
+                <input type="text" class="textbox" name="email" value="<?php echo $comentarios['nombre'] ?>" onfocus="this.value = '';"
+                    onblur="if (this.value == '') {this.value = 'Your E-Mail';}"><br>
+                <div class="clear"> </div>
+                <div>
+                    <textarea name= "mensaje" value="<?php echo $comentarios['nombre'] ?>:">Your Message</textarea><br>
                 </div>
-            </div>
+                <div class="submit">
+                    <input class="btn btn-default cont-btn" type="submit" name= "submit" value="SEnD COMMENT" />
+                    <input type="hidden" name="producto" value="<?php echo $producto['id']?>">
+                </div>
+            </form>
+           
         </div>
+    </div>
+</div>
+<!-- fin comentarios -->
         <div class="specifications">
             <div class="container">
               <h3>Item Details</h3> 

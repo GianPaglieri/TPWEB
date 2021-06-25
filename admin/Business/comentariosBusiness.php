@@ -1,5 +1,6 @@
 <?php
-include_once(DIR_BASE."/admin/DAO/comentariosDao.php");
+include_once('admin/config/config.php');
+include_once(DIR_BASE."admin/DAO/comentariosDao.php");
 
 function businessGuardarComentario($datos = array()){
    daoGuardarcomentario($datos);

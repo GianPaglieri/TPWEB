@@ -39,30 +39,9 @@ include ("includes/sidebar.php")
                             <div class="module message">
                                 <div class="module-head">
                                     <h3>
-                                        Message</h3>
+                                        Mensajes</h3>
                                 </div>
-                                <div class="module-option clearfix">
-                                    <div class="pull-left">
-                                        <div class="btn-group">
-                                            <button class="btn">
-                                                Inbox</button>
-                                            <button class="btn dropdown-toggle" data-toggle="dropdown">
-                                                <span class="caret"></span>
-                                            </button>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="#">Inbox(11)</a></li>
-                                                <li><a href="#">Sent</a></li>
-                                                <li><a href="#">Draft(2)</a></li>
-                                                <li><a href="#">Trash</a></li>
-                                                <li class="divider"></li>
-                                                <li><a href="#">Settings</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="pull-right">
-                                        <a href="#" class="btn btn-primary">Compose</a>
-                                    </div>
-                                </div>
+                                
                                 <div class="module-body table">
                                     <table class="table table-message">
                                         <tbody>
@@ -100,11 +79,11 @@ include ("includes/sidebar.php")
                                                  <?php echo $com ["nombre"] ?> 
                                                 </td>
                                                 <td class="cell-title">
-                                                 <?php echo $com ["comentario"] ?> 
+                                                 <?php echo $com ["mensaje"] ?> 
                                                 </td>
                                                 
                                                 <td class="cell-time align-right">
-                                                    18:24
+                                                <?php echo $com ["fecha"] ?> 
                                                 </td>
                                             </tr>
                                             <?php } ?>
