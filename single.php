@@ -1,9 +1,10 @@
 <?php
 
-include_once('include/header.php');
-include_once('admin/Business/productosBusiness.php');
+include_once(DIR_BASE.'include/header.php');
+include_once(DIR_BASE.'admin/Business/productosBusiness.php');
 $seccion = 'products';
-include_once('admin/helpers/string.php');
+include_once(DIR_BASE.'admin/helpers/string.php');
+include_once(DIR_BASE.'admin/helpers/image.php');
 ?>
 
 <?php

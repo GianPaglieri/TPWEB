@@ -1,6 +1,7 @@
 <?php
   require_once('admin/config/config.php');
   require_once('include/header.php');
+  require_once(DIR_BASE.'admin/business/productosBusiness.php')
 ?>
         <div class="head-bread">
             <div class="container">
@@ -34,7 +35,14 @@
                          <div class="col-md-4 grid-stn simpleCart_shelfItem">
                             <div class="ih-item square effect3 bottom_to_top">
                                 <div class="bottom-2-top">
-                        <div class="img"><img src="images/grid4.jpg" alt="/" class="img-responsive gri-wid"></div>
+                       
+								<?php $imagenes = businessObtenerImagenesProducto($producto['id']) ;
+									if(!empty($imagenes)){?>
+										<img src="<?php echo str_replace('small','big',$imagenes[0])?>" alt="">
+									<?php }else{ ?>
+										<img src="<?php echo URL_BASE?>image/user.png" alt="">
+									<?php } ?>
+
                                 <div class="info">
                                     <div class="pull-left styl-hdn">
                                         <h3><?php echo $producto['nombre']?></h3>

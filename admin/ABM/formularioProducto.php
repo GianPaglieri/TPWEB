@@ -33,7 +33,7 @@ if(!empty($_GET['edit'])){
 
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Equipo DaVinci</title>
     <link type="text/css" href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -42,125 +42,127 @@ if(!empty($_GET['edit'])){
     <link type="text/css" href="../images/icons/css/font-awesome.css" rel="stylesheet">
     <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
         rel='stylesheet'>
-<?php 
+    <?php 
 require(DIR_BASE."/admin/includes/navbar.php");
   require_once(DIR_BASE.'/admin/includes/header.php');
-?></head>
+?>
+</head>
+
 <body>
 
-<?php 
+    <?php 
  
-?>	
-		
-<?php 
+?>
+
+    <?php 
  require(DIR_BASE."/admin/includes/sidebar.php");
-?>				
+?>
 
 
-				<div class="span9">
-					<div class="content">
+    <div class="span9">
+        <div class="content">
 
-						<div class="module">
-							<div class="module-head">
-								<h3>Agregar/Editar Productos</h3>
-							</div>
-							<div class="module-body">
-
-
-									<br />
-
-									<form class="form-horizontal row-fluid" action="" method="post">
-										<div class="control-group">
-											<label class="control-label" for="basicinput">Nombre</label>
-											<div class="controls">
-												<input type="text" id="basicinput" name="nombre" value="<?php echo $producto['nombre']?>"  class="span8">
-												
-											</div>
-										</div>
-                                        <div class="control-group">
-											<label class="control-label" for="basicinput">Categoria</label>
-											<select name="categoria">
-                                             <?php foreach(businessObtenerCategorias() as $cat){?>
-                                             <option value="<?php echo $cat['nombre']?>" <?php echo ($cat['nombre'] == $producto['categoria'])?'selected':'' ?>> <?php echo $cat['nombre']?></option>
-                                             <?php } ?>
-                                            </select>
-											
-										</div>
-
-										<div class="control-group">
-											<label class="control-label" for="basicinput">Marca</label>
-											<select name="marca">
-                                             <?php foreach(businessObtenerMarcas() as $mar){?>
-                                             <option value="<?php echo $mar['nombre']?>" <?php echo ($mar['nombre'] == $producto['marca'])?'selected':'' ?>> <?php echo $mar['nombre']?></option>
-                                             <?php } ?>
-                                            </select>
-											
-										 </div>
-
-                                       
-										<div class="control-group">
-											<label class="control-label" for="basicinput">Precio</label>
-											<div class="controls">
-												<input type="text" id="basicinput" name="precio" value="<?php echo $producto['precio']?>" class="span8">
-												
-											</div>
-										</div>
-										<div class="control-group">
-											<label class="control-label">Activo</label>
-											<div class="controls">
-												<label class="checkbox inline">
-													<input type="checkbox" value="true" name="activa" <?php echo ($producto["activa"]==TRUE)?'checked':'' ?>>
-													
-												</label>
-												
-											</div>
-										</div>
-										<div class="control-group">
-											<label class="control-label" for="basicinput">Descripcion</label>
-											<div class="controls">
-												<textarea class="span8" name="descripcion" rows="5"> <?php echo $producto['descripcion']?> </textarea>
-											</div>
-										</div>
-										<div class="form-group">
-                    <label for="exampleInputFile">File input</label>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" name="imagen[]" multiple class="custom-file-input" id="exampleInputFile">  
-                        <!--<input type="hidden" name="old_imagen" value="<?php //echo $producto['imagen'] ?>" class="custom-file-input" id="exampleInputFile">-->
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div> 
-                    </div>
-                  </div>
+            <div class="module">
+                <div class="module-head">
+                    <h3>Agregar/Editar Productos</h3>
                 </div>
+                <div class="module-body">
+
+
+                    <br />
+
+                    <form class="form-horizontal row-fluid" action="" method="post" enctype="multipart/form-data">
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Nombre</label>
+                            <div class="controls">
+                                <input type="text" id="basicinput" name="nombre"
+                                    value="<?php echo $producto['nombre']?>" class="span8">
+
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Categoria</label>
+                            <select name="categoria">
+                                <?php foreach(businessObtenerCategorias() as $cat){?>
+                                <option value="<?php echo $cat['nombre']?>"
+                                    <?php echo ($cat['nombre'] == $producto['categoria'])?'selected':'' ?>>
+                                    <?php echo $cat['nombre']?></option>
+                                <?php } ?>
+                            </select>
+
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Marca</label>
+                            <select name="marca">
+                                <?php foreach(businessObtenerMarcas() as $mar){?>
+                                <option value="<?php echo $mar['nombre']?>"
+                                    <?php echo ($mar['nombre'] == $producto['marca'])?'selected':'' ?>>
+                                    <?php echo $mar['nombre']?></option>
+                                <?php } ?>
+                            </select>
+
+                        </div>
+
+
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Precio</label>
+                            <div class="controls">
+                                <input type="text" id="basicinput" name="precio"
+                                    value="<?php echo $producto['precio']?>" class="span8">
+
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">Activo</label>
+                            <div class="controls">
+                                <label class="checkbox inline">
+                                    <input type="checkbox" value="true" name="activa"
+                                        <?php echo ($producto["activa"]==TRUE)?'checked':'' ?>>
+
+                                </label>
+
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Descripcion</label>
+                            <div class="controls">
+                                <textarea class="span8" name="descripcion"
+                                    rows="5"> <?php echo $producto['descripcion']?> </textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" name="imagen" multiple class="custom-file-input"
+                                        id="exampleInputFile">
+                                    <!--<input type="hidden" name="old_imagen" value="<?php //echo $producto['imagen'] ?>" class="custom-file-input" id="exampleInputFile">-->
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <button type="submit" name="submit" class="btn btn-primary">Submit Form</button>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
 
 
 
-									
+    </div>
+    <!--/.content-->
+    </div>
+    <!--/.span9-->
+    </div>
+    </div>
+    <!--/.container-->
+    </div>
+    <!--/.wrapper-->
 
-										
-
-										
-
-										
-
-										<div class="control-group">
-											<div class="controls">
-												<button type="submit" name="submit" class="btn">Submit Form</button>
-											</div>
-										</div>
-									</form>
-							</div>
-						</div>
-
-						
-						
-					</div><!--/.content-->
-				</div><!--/.span9-->
-			</div>
-		</div><!--/.container-->
-	</div><!--/.wrapper-->
-
-	<div class="footer">
+    <div class="footer">
         <div class="container">
             <b class="copyright">&copy; Equipo Davinci </b>All rights reserved.
         </div>

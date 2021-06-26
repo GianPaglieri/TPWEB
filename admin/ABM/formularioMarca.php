@@ -32,7 +32,7 @@ if(!empty($_GET['edit'])){
 
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Equipo DaVinci</title>
     <link type="text/css" href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -41,94 +41,93 @@ if(!empty($_GET['edit'])){
     <link type="text/css" href="../images/icons/css/font-awesome.css" rel="stylesheet">
     <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
         rel='stylesheet'>
-<?php 
+    <?php 
 require(DIR_BASE."/admin/includes/navbar.php");
   require_once(DIR_BASE.'/admin/includes/header.php');
-?></head>
+?>
+</head>
+
 <body>
 
-<?php 
+    <?php 
  
-?>	
-		
-<?php 
+?>
+
+    <?php 
  require(DIR_BASE."/admin/includes/sidebar.php");
-?>				
+?>
 
 
-				<div class="span9">
-					<div class="content">
+    <div class="span9">
+        <div class="content">
 
-						<div class="module">
-							<div class="module-head">
-								<h3>Agregar/Editar Marcas</h3>
-							</div>
-							<div class="module-body">
+            <div class="module">
+                <div class="module-head">
+                    <h3>Agregar/Editar Marcas</h3>
+                </div>
+                <div class="module-body">
 
 
-									<br />
+                    <br />
 
-									<form class="form-horizontal row-fluid" action="" method="post">
-										<div class="control-group">
-											<label class="control-label" for="basicinput">Nombre</label>
-											<div class="controls">
-												<input type="text" id="basicinput" name="nombre" value="<?php echo $marca['nombre']?>"  class="span8">
-												
-											</div>
-										</div>
-                                       
+                    <form class="form-horizontal row-fluid" action="" method="post">
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Nombre</label>
+                            <div class="controls">
+                                <input type="text" id="basicinput" name="nombre" value="<?php echo $marca['nombre']?>"
+                                    class="span8">
 
-                                       
-										<div class="control-group">
-											<label class="control-label" for="basicinput">Fabricante</label>
-											<div class="controls">
-												<input type="text" id="basicinput" name="fabricante" value="<?php echo $marca['fabricante']?>" class="span8">
-												
-											</div>
-										</div>
-                                        <div class="control-group">
-											<label class="control-label" for="basicinput">Contacto</label>
-											<div class="controls">
-												<input type="text" id="basicinput" name="contacto" value="<?php echo $marca['contacto']?>" class="span8">
-												
-											</div>
-										</div>
-										
-										<div class="control-group">
-											<label class="control-label" for="basicinput">Descripcion</label>
-											<div class="controls">
-												<textarea class="span8" name="descripcion" rows="5"> <?php echo $marca['descripcion']?> </textarea>
-											</div>
-										</div>
+                            </div>
+                        </div>
 
 
 
-									
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Fabricante</label>
+                            <div class="controls">
+                                <input type="text" id="basicinput" name="fabricante"
+                                    value="<?php echo $marca['fabricante']?>" class="span8">
 
-										
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Contacto</label>
+                            <div class="controls">
+                                <input type="text" id="basicinput" name="contacto"
+                                    value="<?php echo $marca['contacto']?>" class="span8">
 
-										
+                            </div>
+                        </div>
 
-										
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Descripcion</label>
+                            <div class="controls">
+                                <textarea class="span8" name="descripcion"
+                                    rows="5"> <?php echo $marca['descripcion']?> </textarea>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="controls">
+                                <button type="submit" name="submit" class="btn btn-primary">Submit Form</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
 
-										<div class="control-group">
-											<div class="controls">
-												<button type="submit" name="submit" class="btn">Submit Form</button>
-											</div>
-										</div>
-									</form>
-							</div>
-						</div>
 
-						
-						
-					</div><!--/.content-->
-				</div><!--/.span9-->
-			</div>
-		</div><!--/.container-->
-	</div><!--/.wrapper-->
 
-	<div class="footer">
+        </div>
+        <!--/.content-->
+    </div>
+    <!--/.span9-->
+    </div>
+    </div>
+    <!--/.container-->
+    </div>
+    <!--/.wrapper-->
+
+    <div class="footer">
         <div class="container">
             <b class="copyright">&copy; Equipo Davinci </b>All rights reserved.
         </div>

@@ -16,10 +16,6 @@ function daoguardarMarca($datos = array()){
 
 }
 
-
-
-
-
 function daoObtenerMarcas(){
     if(file_exists(DIR_BASE.'/admin/datos/marca.json')){ 
         $marcas = json_decode(file_get_contents(DIR_BASE.'/admin/datos/marca.json'),TRUE);	

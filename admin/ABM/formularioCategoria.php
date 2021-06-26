@@ -106,7 +106,7 @@ require(DIR_BASE."/admin/includes/navbar.php");
 
 										<div class="control-group">
 											<div class="controls">
-												<button type="submit" name="submit" class="btn">Submit Form</button>
+												<button type="submit" name="submit" class="btn btn-primary">Submit Form</button>
 											</div>
 										</div>
 									</form>
