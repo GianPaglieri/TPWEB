@@ -33,7 +33,7 @@ function daoobtenerMarca($id){
 
 }
 
-function daomodificarMarca($id ,$datos = array() ){
+function daomodificarMarca($datos = array(), $id ){
 
     $marcas = daoObtenerMarcas();
     $marcas[$id] = array(

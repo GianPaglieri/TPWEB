@@ -37,26 +37,24 @@ function daoobtenerCategoria($id){
 
 }
 
-function daomodificarCategoria($id ,$datos = array() ){
+function daomodificarCategoria($datos = array(), $id){
 
     $categorias = daoObtenerCategorias();
     $categorias[$id] = array(
        'id' => $id,
        'nombre' => $datos['nombre'],
        'subcategoria' => $datos['subcategoria'],
-       
-      
        'descripcion' => $datos['descripcion'],
       
    ); 
-   file_put_contents('../datos/productos.json',json_encode($categorias));
+   file_put_contents('../datos/categoria.json',json_encode($categorias));
     
 }
 
 function daoborrarCategoria($id){
      $categorias=daoObtenerCategorias();
      unset($categorias[$id]);
-     file_put_contents(DIR_BASE.'/admin/datos/categoria.json', json_encode($categoria));
+     file_put_contents(DIR_BASE.'/admin/datos/categoria.json', json_encode($categorias));
 }
 ?>
  

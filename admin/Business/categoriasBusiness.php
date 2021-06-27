@@ -1,11 +1,11 @@
 <?php
 include_once(DIR_BASE.'admin/DAO/categoriasDao.php');
 
-function businessGuardarCategorias($datoscategoria = array()){
+function businessGuardarCategorias($datos = array()){
     if(!empty($_FILES['imagen'])){
-       $datoscategoria['imagen'] = $_FILES['imagen']['name'];
+       $datos['imagen'] = $_FILES['imagen']['name'];
    }
-   $id = daoGuardarCategoria($datoscategoria);
+   $id = daoGuardarCategoria($datos);
    
  }
 
@@ -17,11 +17,10 @@ function businessobtenerCategoria($id){
     return daoObtenerCategoria($id);
 }
 
-function businessmodificarCategoria($datoscategoria = array(), $id){
-   if(!empty($_FILES['imagen'])){
-      $datoscategoria['imagen'] = $_FILES['imagen']['name'];
-  }
-  daoModificarCategoria($datoscategoria,$id);
+function businessmodificarCategoria($datos = array(), $id){
+    daoModificarCategoria($datos,$id);
+  
+
 }
 
 function businessborrarCategoria($id){
