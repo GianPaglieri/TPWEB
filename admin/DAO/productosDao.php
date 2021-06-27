@@ -17,8 +17,8 @@ function daoguardarProducto($datos = array()){
 }
 
 function daoObtenerProductos(){
-    if(file_exists(DIR_BASE.'/admin/datos/productos.json')){ 
-        $productos = json_decode(file_get_contents(DIR_BASE.'/admin/datos/productos.json'),TRUE);	
+    if(file_exists(DIR_BASE.'admin/datos/productos.json')){ 
+        $productos = json_decode(file_get_contents(DIR_BASE.'admin/datos/productos.json'),TRUE);	
               
     }else{
         $productos = array();   

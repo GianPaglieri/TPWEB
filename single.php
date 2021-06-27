@@ -1,15 +1,24 @@
 <?php
 
-include_once(DIR_BASE.'include/header.php');
-include_once(DIR_BASE.'admin/Business/productosBusiness.php');
-$seccion = 'products';
-include_once(DIR_BASE.'admin/helpers/string.php');
-include_once(DIR_BASE.'admin/helpers/image.php');
+require_once('admin/config/config.php');
+require_once('include/header.php');
+include_once('admin/Business/comentariosBusiness.php');
+require_once(DIR_BASE.'admin/business/productosBusiness.php')
+
 ?>
 
 <?php
+$seccion = 'products';
 		$producto = businessObtenerProducto($_GET['producto']);
-	?>
+
+include_once('admin/helpers/string.php');
+if(isset($_POST['submit'])){ 
+    businessGuardarComentario($_POST);     
+    }
+  
+  $comentarios = array( 'nombre' => '','email' => '','mensaje' => '','fecha' => '');
+  
+?>
 
 <div class="head-bread">
     <div class="container">
@@ -24,24 +33,16 @@ include_once(DIR_BASE.'admin/helpers/image.php');
     <div class="container">
         <div class="col-md-8 showcase">
             <div class="flexslider">
-                <ul class="slides">
-                    <li data-thumb="images/show.jpg">
-                        <div class="thumb-image"> <img src="images/show.jpg" data-imagezoom="true"
-                                class="img-responsive"> </div>
-                    </li>
-                    <li data-thumb="images/show1.jpg">
-                        <div class="thumb-image"> <img src="images/show1.jpg" data-imagezoom="true"
-                                class="img-responsive"> </div>
-                    </li>
-                    <li data-thumb="images/show2.jpg">
-                        <div class="thumb-image"> <img src="images/show2.jpg" data-imagezoom="true"
-                                class="img-responsive"> </div>
-                    </li>
-                    <li data-thumb="images/show3.jpg">
-                        <div class="thumb-image"><img src="images/show3.jpg" data-imagezoom="true"
-                                class="img-responsive"> </div>
-                    </li>
-                </ul>
+
+
+
+                <?php $imagenes = businessObtenerImagenesProducto($producto['id']) ;
+									if(!empty($imagenes)){?>
+                <img src="<?php echo str_replace('small','xl',$imagenes[0])?>" alt="">
+                <?php }else{ ?>
+                <img src="<?php echo URL_BASE?>image/user.png" alt="">
+                <?php } ?>
+
                 <div class="clearfix"></div>
             </div>
         </div>
@@ -114,19 +115,19 @@ include_once(DIR_BASE.'admin/helpers/image.php');
 <div class="contact">
     <div class="container">
         <h3>commentary</h3>
-        <div class="contact-content">
-            <form>
-                <input type="text" class="textbox" value=" Your Name" onfocus="this.value = '';"
+        <div class="contact-content" >
+            <form class="form-horizontal row-fluid" action="" method="POST">
+                <input type="text" class="textbox" name= "nombre" value="<?php echo $comentarios['nombre'] ?>" onfocus="this.value = '';"
                     onblur="if (this.value == '') {this.value = 'Your Name';}"><br>
-                <input type="text" class="textbox" value="Your E-Mail" onfocus="this.value = '';"
+                <input type="text" class="textbox" name="email" value="<?php echo $comentarios['nombre'] ?>" onfocus="this.value = '';"
                     onblur="if (this.value == '') {this.value = 'Your E-Mail';}"><br>
                 <div class="clear"> </div>
                 <div>
-                    <textarea value="Message:" onfocus="this.value = '';"
-                        onblur="if (this.value == '') {this.value = 'Your Message ';}">Your Message</textarea><br>
+                <textarea name= "mensaje" value="<?php echo $comentarios['nombre'] ?>:">Your Message</textarea><br>
                 </div>
                 <div class="submit">
-                    <input class="btn btn-default cont-btn" type="submit" value="SEND COMMENT" />
+                    <input class="btn btn-default cont-btn" type="submit" name= "submit" value="SEND COMMENT" />
+                    <input type="hidden" name="producto" value="<?php echo $producto['id']?>">
                 </div>
             </form>
         </div>

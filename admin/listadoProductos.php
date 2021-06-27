@@ -16,99 +16,103 @@ if(isset($_GET['del'] )){
     businessborrarProducto($_GET["del"]);
     redirect('ListadoProductos.php');
 }
-?> 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-   
+
 </head>
+
 <body>
-<?php 
+    <?php 
 include ("includes/navbar.php")
-?>	
-	
+?>
 
-<?php 
+
+    <?php 
 include ("includes/sidebar.php")
-?>				
-
-    
-    
-    
-                <div class="span9">
-                    <div class="content">
-                       
-                        <br />
-                        <div class="module">
-                            <div class="module-head">
-                                <h3>
-                                    Listado de productos</h3>
-                                    <a href="ABM/formularioProducto.php"  class="btn btn-primary">Agregar Producto</a>  
-                            </div>
-                            <div class="module-body">
-                                <div class="grid">
-                                    <div id="placeholder2" class="graph">
-
-                                    <p>
-									<strong>Productos</strong>
-									-
-									
-								</p>
-								<table class="table">
-								  <thead>
-									<tr>
-									  <th>ID</th>
-									  <th>Nombre</th>
-									  <th>Categoria</th>
-                                      <th>Marca</th>
-									  <th>Precio</th>
-                                      <th>Activo</th>
-                                      <th>Acciones</th>
-									</tr>
-								  </thead>
-								  <tbody>
-                                  <?php foreach(businessObtenerProductos() as $prod){?>
-
-									<tr>
-									  <td><?php echo cortar_palabras($prod['id'],555)?></td>
-									  <td><?php echo $prod ["nombre"] ?></td>
-									  <td><?php echo $prod ["categoria"] ?></td>
-									  <td><?php echo $prod ["marca"] ?></td>
-                                      <td><?php echo $prod ["precio"] ?></td>
-                                      <td> <?php echo $prod ["activa"] ?></td>
-                                      <td> 
-                                      <a href="ABM/formularioProducto.php?edit=<?php echo $prod['id']?>" class="btn btn-warning">Editar</a>
-                                      <a href= "ListadoProductos.php?del=<?php echo $prod ['id']?>" class="btn btn-danger">Borrar</a>
-                                      </td>
-									</tr>
-                                <?php } ?>
-								  </tbody>
-								</table>
+?>
 
 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--/.module-->
-                        <br />
-                        
-                        </div>
-                        <!--/.module-->
-                    </div>
-                    <!--/.content-->
+
+
+    <div class="span9">
+        <div class="content">
+
+            <br />
+            <div class="module">
+                <div class="module-head">
+                    <h3>
+                        Listado de productos</h3>
+                    <a href="ABM/formularioProducto.php" class="btn btn-primary">Agregar Producto</a>
                 </div>
-                <!--/.span9-->
+                <div class="module-body">
+                    <div class="grid">
+                        <div id="placeholder2" class="graph">
+
+                            <p>
+                                <strong>Productos</strong>
+                                -
+
+                            </p>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nombre</th>
+                                        <th>Categoria</th>
+                                        <th>Marca</th>
+                                        <th>Precio</th>
+                                        <th>Activo</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach(businessObtenerProductos() as $prod){?>
+
+                                    <tr>
+                                        <td><?php echo cortar_palabras($prod['id'],555)?></td>
+                                        <td><?php echo $prod ["nombre"] ?></td>
+                                        <td><?php echo $prod ["categoria"] ?></td>
+                                        <td><?php echo $prod ["marca"] ?></td>
+                                        <td><?php echo $prod ["precio"] ?></td>
+                                        <td> <?php echo $prod ["activa"] ?></td>
+                                        <td>
+                                            <a href="ABM/formularioProducto.php?edit=<?php echo $prod['id']?>"
+                                                class="btn btn-warning">Editar</a>
+                                            <a href="ListadoProductos.php?del=<?php echo $prod ['id']?>"
+                                                class="btn btn-danger">Borrar</a>
+                                        </td>
+                                    </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+
+
+                        </div>
+                    </div>
+                </div>
             </div>
+            <!--/.module-->
+            <br />
+
         </div>
-        <!--/.container-->
+        <!--/.module-->
+    </div>
+    <!--/.content-->
+    </div>
+    <!--/.span9-->
+    </div>
+    </div>
+    <!--/.container-->
     </div>
 
 
-   <!--/.wrapper-->
-<div class="footer">
+    <!--/.wrapper-->
+    <div class="footer">
         <div class="container">
             <b class="copyright">&copy; Equipo Davinci </b>All rights reserved.
         </div>

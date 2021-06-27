@@ -4,7 +4,9 @@ include_once('admin/Business/comentariosBusiness.php');
 include_once('admin/Business/productosBusiness.php');
 
 $seccion = 'products';
+
 include_once('admin/helpers/string.php');
+
 if(isset($_POST['submit'])){ 
     businessGuardarComentario($_POST);     
     }

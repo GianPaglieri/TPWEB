@@ -38,7 +38,7 @@
                        
 								<?php $imagenes = businessObtenerImagenesProducto($producto['id']) ;
 									if(!empty($imagenes)){?>
-										<img src="<?php echo str_replace('small','big',$imagenes[0])?>" alt="">
+										<img src="<?php echo str_replace('big','small',$imagenes[0])?>" alt="">
 									<?php }else{ ?>
 										<img src="<?php echo URL_BASE?>image/user.png" alt="">
 									<?php } ?>
@@ -55,7 +55,7 @@
                             </div>
                         <div class="quick-view">
                            
-                            <a href="productoIndividual.php?producto=<?php echo $producto['id']?>" class="shopBtn">VIEW</a>
+                            <a href="single.php?producto=<?php echo $producto['id']?>" class="shopBtn">VIEW</a>
                         </div>
                     </div>
 <!-- fin codigo a repetir -->

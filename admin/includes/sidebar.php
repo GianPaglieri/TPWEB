@@ -42,6 +42,13 @@
 									
 								</a>
 							</li>
+							<li>
+								<a href="listadoComentarios.php">
+									<i class="menu-icon icon-tasks"></i>
+									Comentarios
+									
+								</a>
+							</li>
 						
 							
 						</ul><!--/.widget-nav-->
