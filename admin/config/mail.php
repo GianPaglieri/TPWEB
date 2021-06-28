@@ -1,8 +1,8 @@
 <?php
 
-$mail_smtp_addr = 'mail.claudiovillagran.com';
+$mail_smtp_addr = 'smtp.mail.yahoo.com';
 $mail_smtp_port = '587';
-$mail_smtp_user = 'claudiovillagran32@gmail.com';
-$mail_smtp_pass = 'n]3$zM)L+NOa';
+$mail_smtp_user = 'cshopair32@yahoo.com';
+$mail_smtp_pass = 'zrawxshaszxeddnx';
 
 ?>

@@ -5,7 +5,7 @@ include_once('admin/config/config.php');
 
 <?php
 require_once(DIR_BASE.'/include/header.php');	
-require_once(DIR_BASE.'admin/Business/contactBusiness.php');
+require_once(DIR_BASE.'/admin/Business/contactBusiness.php');
 
 if(!empty($_POST['email'])){
     var_dump($_POST);
