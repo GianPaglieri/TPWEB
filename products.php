@@ -68,66 +68,44 @@
                     <div class="grid-addon">
                         <section  class="sky-form">
 					 <div class="product_right">
-						 <h4 class="m_2"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span>filter</h4>
+						 <h4 class="m_2"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span>Categorias</h4>
 						 <div class="tab1">
-							 <ul class="place">								
-								 <li class="sort">Categories</li>
-								 <li class="by"><img src="images/do.png" alt=""></li>
-									<div class="clearfix"> </div>
-							  </ul>
+
 							 <div class="single-bottom">
 <!-- filtro categorias -->
 							 <?php 
 				$arrCat = json_decode(file_get_contents(DIR_BASE.'admin/datos/categoria.json'),true);
 				foreach($arrCat as $cat ){
 			?>
-					<li><a href="products.php?categoria=<?php echo $cat['nombre']?>&marca=<?php echo (isset($_GET['marca']))?$_GET['marca']:""; ?>">
+					<a href="products.php?categoria=<?php echo $cat['nombre']?>&marca=<?php echo (isset($_GET['marca']))?$_GET['marca']:""; ?>" >
 					        <span class="icon-chevron-right"></span><?php echo $cat['nombre']?>
-					    </a></li>
+					    </a></br></br>
 			<?php } ?>
-			<li><a href="products.php?categoria=&marca=<?php echo (isset($_GET['marca']))?$_GET['marca']:""; ?>"><span class="icon-chevron-right"></span>Todas</a></li>
+			<a href="products.php?categoria=&marca=<?php echo (isset($_GET['marca']))?$_GET['marca']:""; ?>"><span class="icon-chevron-right"></span>Todas</a>
 <!-- fin filtro categoria -->
 						     </div>
-					      </div>						  
+					      </div>	
+						  <h4 class="m_2"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span>Marcas</h4>					  
 						  <div class="tab2">
-							 <ul class="place">								
-								 <li class="sort">Marcas</li>
-								 <li class="by"><img src="images/do.png" alt=""></li>
-									<div class="clearfix"> </div>
-							  </ul>
+
 							 <div class="single-bottom">	
 <!-- filtro marca -->
 							 <?php 
 				$arrMarcas = json_decode(file_get_contents(DIR_BASE.'admin/datos/marca.json'),true);
 				foreach($arrMarcas as $mar ){
 			?>
-					<li><a href="products.php?marca=<?php echo $mar['nombre']?>&categoria=<?php echo (isset($_GET['categoria']))?$_GET['categoria']:""; ?>">
+					<a href="products.php?marca=<?php echo $mar['nombre']?>&categoria=<?php echo (isset($_GET['categoria']))?$_GET['categoria']:""; ?>">
 					     <span class="icon-chevron-right"></span><?php echo $mar['nombre']?>
-				    </a></li>
+				    </a></br></br>
 			<?php } ?>
-			<li><a href="products.php?marca=&categoria=<?php echo (isset($_GET['categoria']))?$_GET['categoria']:""; ?>"><span class="icon-chevron-right"></span>Todas</a></li>
+			<a href="products.php?marca=&categoria=<?php echo (isset($_GET['categoria']))?$_GET['categoria']:""; ?>"><span class="icon-chevron-right"></span>Todas</a>
 <!-- fin de filtro marca -->
 						     </div>
 					      </div>						  
 						  <!--script-->
 						
 				   <!---->
-					 <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
-					<script type='text/javascript'>//<![CDATA[ 
-					$(window).load(function(){
-					 $( "#slider-range" ).slider({
-								range: true,
-								min: 0,
-								max: 400000,
-								values: [ 2500, 350000 ],
-								slide: function( event, ui ) {  $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-								}
-					 });
-					$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ) );
 
-					});//]]>  
-
-					</script>
 	
                     </div>
                </div>
