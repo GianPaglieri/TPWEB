@@ -12,6 +12,8 @@ function sendMail($data){
     $transport = (new Swift_SmtpTransport($GLOBALS['mail_smtp_addr'],$GLOBALS['mail_smtp_port'],'ssl'))
     ->setUsername($GLOBALS['mail_smtp_user'])
     ->setPAssword($GLOBALS['mail_smtp_pass']);
+    
+    
 
     $mailer = new Swift_Mailer($transport);
 

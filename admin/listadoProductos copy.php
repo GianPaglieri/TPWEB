@@ -53,6 +53,46 @@ include ("includes/sidebar.php")
 
 
                 </div>
+                <div class="clearfix"></div>
+                </div>
+               <div class="col-md-3 grid-details">
+                    <div class="grid-addon">
+                        <section  class="sky-form">
+					 <div class="product_right">
+						 <h4 class="m_2"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span>Categorias</h4>
+						 <div class="tab1">
+
+							 <div class="single-bottom">
+<!-- filtro categorias -->
+							 <?php 
+				$arrCat = json_decode(file_get_contents(DIR_BASE.'admin/datos/categoria.json'),true);
+				foreach($arrCat as $cat ){
+			?>
+					<a href="listadoproductos copy.php?categoria=<?php echo $cat['nombre']?>&marca=<?php echo (isset($_GET['marca']))?$_GET['marca']:""; ?>" >
+					        <span class="icon-chevron-right"></span><?php echo $cat['nombre']?>
+					    </a></br></br>
+			<?php } ?>
+			<a href="listadoproductos copy.php?categoria=&marca=<?php echo (isset($_GET['marca']))?$_GET['marca']:""; ?>"><span class="icon-chevron-right"></span>Todas</a>
+<!-- fin filtro categoria -->
+						     </div>
+					      </div>	
+						  <h4 class="m_2"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span>Marcas</h4>					  
+						  <div class="tab2">
+
+							 <div class="single-bottom">	
+<!-- filtro marca -->
+							 <?php 
+				$arrMarcas = json_decode(file_get_contents(DIR_BASE.'admin/datos/marca.json'),true);
+				foreach($arrMarcas as $mar ){
+			?>
+					<a href="listadoproductos copy.php?marca=<?php echo $mar['nombre']?>&categoria=<?php echo (isset($_GET['categoria']))?$_GET['categoria']:""; ?>">
+					     <span class="icon-chevron-right"></span><?php echo $mar['nombre']?>
+				    </a></br></br>
+			<?php } ?>
+			<a href="listadoproductos copy.php?marca=&categoria=<?php echo (isset($_GET['categoria']))?$_GET['categoria']:""; ?>"><span class="icon-chevron-right"></span>Todas</a>
+<!-- fin de filtro marca -->
+						     </div>
+					      </div>		
                 <div class="module-body table">
                     <div class="grid">
                         <div id="placeholder2" class="graph">
@@ -77,7 +117,22 @@ include ("includes/sidebar.php")
                                 </thead>
                                 <tbody>
                                     <?php foreach(businessObtenerProductos() as $prod){?>
+                                        <?php
+                        $arrayProductos = json_decode(file_get_contents('datos/productos.json'),TRUE);	
 
+                        foreach($arrayProductos as $producto){ 
+                            $print = true;
+                       
+                            if(!empty($_GET['categoria']) AND $print){
+                                if($producto['categoria'] != $_GET['categoria']) $print = FALSE;
+                            }
+
+                            if(!empty($_GET['marca']) AND $print){
+                                if($producto['marca'] != $_GET['marca']) $print = FALSE;
+                            }
+
+                            if($print){ 							
+                     ?>
                                     <tr>
                                         <td><?php echo cortar_palabras($prod['id'],555)?></td>
                                         <td><?php echo $prod ["nombre"] ?></td>
@@ -92,7 +147,7 @@ include ("includes/sidebar.php")
                                                 class="btn btn-danger">Borrar</a>
                                         </td>
                                     </tr>
-                                    <?php } ?>
+                                    <?php }}} ?>
                                 </tbody>
                             </table>
 

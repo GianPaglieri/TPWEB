@@ -91,7 +91,7 @@ include ("includes/sidebar.php")
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="module-foot">
+                                
                                 </div>
                             </div>
                         </div>
@@ -102,12 +102,18 @@ include ("includes/sidebar.php")
             </div>
             <!--/.container-->
         </div>
-        <!--/.wrapper-->
-       <!--/.wrapper-->
+    </div>
+    </div>
+    
+    
+    
+    
+    <div class="module-foot">
        <div class="footer">
         <div class="container">
             <b class="copyright">&copy; Equipo Davinci </b>All rights reserved.
         </div>
+    </div>
     </div>
     <script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
     <script src="scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
