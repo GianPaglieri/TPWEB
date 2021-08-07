@@ -61,6 +61,55 @@ include ("includes/sidebar.php")
                             <p>
                                 <strong>Productos</strong>
                                 -
+                               
+                               
+                               <!-- FILTRO CATEGORIA -->
+                                <div class="control-group">
+											<label class="control-label" for="basicinput">Filtro categoria</label>
+											<div class="controls">
+												<div class="dropdown">
+													<a class="dropdown-toggle btn" data-toggle="dropdown" href="#">Filtrar categoria <i class="icon-caret-down"></i></a>
+													<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+														<li><a href="#"> <?php 
+				$arrCat = json_decode(file_get_contents(DIR_BASE.'admin/datos/categoria.json'),true);
+				foreach($arrCat as $cat ){
+			?>
+					<a href="listadoproductos.php?categoria=<?php echo $cat['nombre']?>&marca=<?php echo (isset($_GET['marca']))?$_GET['marca']:""; ?>" >
+					        <span class="icon-chevron-right"></span><?php echo $cat['nombre']?>
+					    </a></br></br>
+			<?php } ?>
+			<a href="listadoproductos.php?categoria=&marca=<?php echo (isset($_GET['marca']))?$_GET['marca']:""; ?>"><span class="icon-chevron-right"></span>Todas</a></a></li>
+														
+													</ul>
+												</div>
+											</div>
+										</div>
+
+                                        <!-- FIN FILTRO CATEGORIA -->
+<!-- FILTRO MARCA -->
+                                        <div class="control-group">
+											<label class="control-label" for="basicinput">Filtro marca</label>
+											<div class="controls">
+												<div class="dropdown">
+													<a class="dropdown-toggle btn" data-toggle="dropdown" href="#">Filtrar marcas <i class="icon-caret-down"></i></a>
+													<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+														<li><a href="#"><?php 
+				$arrMarcas = json_decode(file_get_contents(DIR_BASE.'admin/datos/marca.json'),true);
+				foreach($arrMarcas as $mar ){
+			?>
+					<a href="listadoproductos.php?marca=<?php echo $mar['nombre']?>&categoria=<?php echo (isset($_GET['categoria']))?$_GET['categoria']:""; ?>">
+					     <span class="icon-chevron-right"></span><?php echo $mar['nombre']?>
+				    </a></br></br>
+			<?php } ?>
+			<a href="listadoproductos.php?marca=&categoria=<?php echo (isset($_GET['categoria']))?$_GET['categoria']:""; ?>"><span class="icon-chevron-right"></span>Todas</a></a></li>
+														
+													</ul>
+												</div>
+											</div>
+										</div>
+<!-- FIN FILTRO MARCA -->
+
+
 
                             </p>
                             <table class="table">
@@ -76,7 +125,22 @@ include ("includes/sidebar.php")
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach(businessObtenerProductos() as $prod){?>
+  <!-- LOGICA -->
+                                    <?php foreach(businessObtenerProductos() as $prod){
+
+                                       
+                                        $print = true;
+                       
+                            if(!empty($_GET['categoria']) AND $print){
+                                if($prod['categoria'] != $_GET['categoria']) $print = FALSE;
+                            }
+
+                            if(!empty($_GET['marca']) AND $print){
+                                if($prod['marca'] != $_GET['marca']) $print = FALSE;
+                            }
+
+                            if($print){ 							
+                     ?>
 
                                     <tr>
                                         <td><?php echo cortar_palabras($prod['id'],555)?></td>
@@ -92,7 +156,7 @@ include ("includes/sidebar.php")
                                                 class="btn btn-danger">Borrar</a>
                                         </td>
                                     </tr>
-                                    <?php } ?>
+                                    <?php }} ?>
                                 </tbody>
                             </table>
 
