@@ -59,13 +59,13 @@ include ("includes/sidebar.php")
                         
 
                             <p>
-                                <strong>Productos</strong>
-                                -
+                                <strong></strong>
+                                
                                
                                
                                <!-- FILTRO CATEGORIA -->
                                 <div class="control-group">
-											<label class="control-label" for="basicinput">Filtro categoria</label>
+											<label class="control-label" for="basicinput"></label>
 											<div class="controls">
 												<div class="dropdown">
 													<a class="dropdown-toggle btn" data-toggle="dropdown" href="#">Filtrar categoria <i class="icon-caret-down"></i></a>
@@ -88,7 +88,7 @@ include ("includes/sidebar.php")
                                         <!-- FIN FILTRO CATEGORIA -->
 <!-- FILTRO MARCA -->
                                         <div class="control-group">
-											<label class="control-label" for="basicinput">Filtro marca</label>
+											<label class="control-label" for="basicinput"></label>
 											<div class="controls">
 												<div class="dropdown">
 													<a class="dropdown-toggle btn" data-toggle="dropdown" href="#">Filtrar marcas <i class="icon-caret-down"></i></a>

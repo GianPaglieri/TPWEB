@@ -41,7 +41,7 @@ include ("includes/sidebar.php")
                                     <h3>
                                         Mensajes</h3>
                                         <div class="control-group">
-											<label class="control-label" for="basicinput">Filtrar productos</label>
+											<label class="control-label" for="basicinput"></label>
 											<div class="controls">
 												<div class="dropdown">
 													<a class="dropdown-toggle btn" data-toggle="dropdown" href="#">Filtrar productos <i class="icon-caret-down"></i></a>
