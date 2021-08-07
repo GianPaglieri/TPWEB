@@ -40,6 +40,27 @@ include ("includes/sidebar.php")
                                 <div class="module-head">
                                     <h3>
                                         Mensajes</h3>
+                                        <div class="control-group">
+											<label class="control-label" for="basicinput">Filtrar productos</label>
+											<div class="controls">
+												<div class="dropdown">
+													<a class="dropdown-toggle btn" data-toggle="dropdown" href="#">Filtrar productos <i class="icon-caret-down"></i></a>
+													<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+														<li><a href="#"><?php 
+				$arrCat = json_decode(file_get_contents(DIR_BASE.'admin/datos/comentarios.json'),true);
+				foreach($arrCat as $cat ){
+			?>
+					<a href="listadocomentarios.php?producto=<?php echo $cat['producto']?><?php echo (isset($_GET['producto']))?$_GET['producto']:""; ?>" >
+					        <span class="icon-chevron-right"></span><?php echo $cat['producto']?>
+					    </a></br></br>
+			<?php } ?>
+			<a href="listadocomentarios.php?<?php echo (isset($_GET['producto']))?$_GET['producto']:""; ?>"><span class="icon-chevron-right"></span>Todos</a></a></li>
+														
+													</ul>
+												</div>
+											</div>
+										</div>
+
                                 </div>
                                 
                                 <div class="module-body table">
@@ -68,7 +89,17 @@ include ("includes/sidebar.php")
 
 
                                             <tr class="unread">
-                                            <?php foreach(businessObtenerComentarios() as $com){?>
+                                            <?php foreach(businessObtenerComentarios() as $com){
+                                                $print = true;
+                       
+                            if(!empty($_GET['producto']) AND $print){
+                                if($com['producto'] != $_GET['producto']) $print = FALSE;
+                            }
+
+                            
+
+                            if($print){ 							
+                     ?>
                                                 <td class="cell-icon">
                                                     <i class="icon-star"></i>
                                                 </td>
@@ -86,7 +117,7 @@ include ("includes/sidebar.php")
                                                 <?php echo $com ["fecha"] ?> 
                                                 </td>
                                             </tr>
-                                            <?php } ?>
+                                            <?php }} ?>
                                             
                                         </tbody>
                                     </table>
