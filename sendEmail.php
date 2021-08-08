@@ -1,5 +1,5 @@
 <?php
-    use PHPMailer\PHPMailer\PHPMailer;
+    use phpmailer\PHPMailer\PHPMailer;
 
     if (isset($_POST['name']) && isset($_POST['email'])) {
         $name = $_POST['name'];
@@ -39,6 +39,6 @@
 
         exit(json_encode(array("status" => $status, "response" => $response)));
     }
-    var_dump();
+    
 ?>
       
