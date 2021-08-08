@@ -100,7 +100,7 @@ if(!empty($_POST['email'])){
 
     <?php
          include_once(DIR_BASE.'/include/footer.php');
-        ?>
+    ?>
 
 </body>
 

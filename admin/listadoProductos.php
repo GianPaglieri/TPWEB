@@ -49,20 +49,13 @@ include ("includes/sidebar.php")
                     <h3>
                         Listado de productos</h3>
                     <a href="ABM/formularioProducto.php" class="btn btn-primary">Agregar Producto</a>
-                    
-
-
                 </div>
                 <div class="module-body table">
                     <div class="grid">
-                        <div id="placeholder2" class="graph">
+                        <div id="placeholder2">
                         
-
-                            <p>
-                                <strong></strong>
-                                
-                               
-                               
+                          <p>
+                                <strong></strong>        
                                <!-- FILTRO CATEGORIA -->
                                 <div class="control-group">
 											<label class="control-label" for="basicinput"></label>
@@ -159,20 +152,17 @@ include ("includes/sidebar.php")
                                     <?php }} ?>
                                 </tbody>
                             </table>
-
                         </div>
+                        <div class="module-foot">
                      </div>
-                
-                
-                
-                
                 </div>
-
             </div>
         </div>    
     </div> 
     </div>   
-                        
+    </div>    
+    </div> 
+    </div>   
         
     <!--/.wrapper-->
     <div class="footer">
